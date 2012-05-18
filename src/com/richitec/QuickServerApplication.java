@@ -13,6 +13,8 @@ import org.red5.server.api.IScope;
 import org.red5.server.api.service.IServiceCall;
 import org.red5.server.api.service.IServiceCapableConnection;
 import org.red5.server.api.stream.IBroadcastStream;
+import org.red5.server.api.stream.IStreamListener;
+import org.red5.server.api.stream.IStreamPacket;
 import org.red5.server.api.stream.ISubscriberStream;
 import org.slf4j.Logger;
 
@@ -191,8 +193,16 @@ public class QuickServerApplication extends MultiThreadedApplicationAdapter {
         	streamMap.put(scopeContext, streamSet);
     	}
     	streamSet.add(stream.getPublishedName());
-    	
     	broadcast(streamStartMessage, stream.getPublishedName(), stream.getScope());
+    	
+    	//TODO: transfer to RTP
+    	stream.addStreamListener(new IStreamListener() {
+			
+			@Override
+			public void packetReceived(IBroadcastStream stream, IStreamPacket packet) {
+				// TODO Auto-generated method stub
+			}
+		});    	
     }
     
     @Override
