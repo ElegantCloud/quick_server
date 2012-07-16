@@ -5,7 +5,7 @@ import org.slf4j.Logger;
 
 public class LoggerFactory {
 	
-	static Logger getLogger(Class<?> clazz){
+	public static Logger getLogger(Class<?> clazz){
 		return Red5LoggerFactory.getLogger(clazz, "quick_server");
 	}
 
