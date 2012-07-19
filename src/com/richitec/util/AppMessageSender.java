@@ -39,22 +39,22 @@ public class AppMessageSender {
 
 	}
 
-	public void notifyUserVideoOn(String groupId, String userName) {
-		log.debug("notifyUserVideoOn - groupId: " + groupId + " userName: " + userName);
-		NameValuePair[] data = { new BasicNameValuePair("groupId", groupId),
+	public void notifyUserVideoOn(String conferenceId, String userName) {
+		log.debug("notifyUserVideoOn - conferenceId: " + conferenceId + " userName: " + userName);
+		NameValuePair[] data = { new BasicNameValuePair("conferenceId", conferenceId),
 				new BasicNameValuePair("username", userName),
 				new BasicNameValuePair("video_status", "on") };
 
-		executeHttpPost(this.serverPath + "/group/updateAttendeeStatus", data);
+		executeHttpPost(this.serverPath + "/conference/updateAttendeeStatus", data);
 	}
 
-	public void notifyUserVideoOff(String groupId, String userName) {
-		log.debug("notifyUserVideoOff - groupId: " + groupId + " userName: " + userName);
-		NameValuePair[] data = { new BasicNameValuePair("groupId", groupId),
+	public void notifyUserVideoOff(String conferenceId, String userName) {
+		log.debug("notifyUserVideoOff - conferenceId: " + conferenceId + " userName: " + userName);
+		NameValuePair[] data = { new BasicNameValuePair("conferenceId", conferenceId),
 				new BasicNameValuePair("username", userName),
 				new BasicNameValuePair("video_status", "off") };
 
-		executeHttpPost(this.serverPath + "/group/updateAttendeeStatus", data);
+		executeHttpPost(this.serverPath + "/conference/updateAttendeeStatus", data);
 	}
 
 	private void executeHttpPost(String url, NameValuePair[] data) {
