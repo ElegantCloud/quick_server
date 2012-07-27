@@ -23,4 +23,7 @@
 	    class="com.richitec.QuickServerApplication" 
 		singleton="true" />
 
+	<bean id="app.msgsender" class="com.richitec.util.AppMessageSender" singleton="true">
+		<property name="serverPath" value="${app_server}" />
+	</bean>
 </beans>
