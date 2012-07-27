@@ -139,6 +139,7 @@ public class QuickServerApplication extends MultiThreadedApplicationAdapter {
     @Override
     public boolean roomJoin(IClient client, IScope scope){
     	log.debug("roomJoin");
+    	/*
     	Set<IClient> allClients = scope.getClients();
     	if (allClients.size() >= 4){
     		System.err.println("The conference " + scope.getContextPath() + 
@@ -153,6 +154,7 @@ public class QuickServerApplication extends MultiThreadedApplicationAdapter {
     	}
     	
     	broadcast(JoinMessage, client.getAttribute(UserID), scope);
+    	*/
     	return true;
     }
     
@@ -237,7 +239,7 @@ public class QuickServerApplication extends MultiThreadedApplicationAdapter {
 		
 		log.debug("scope " + scope.getContextPath() + " has " + clientSet.size() + " clients");
 		for (IClient client : clientSet){
-			callClientFunc(func, message, client);
+			//callClientFunc(func, message, client);
 		}
 	}
 	
