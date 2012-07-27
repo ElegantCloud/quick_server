@@ -151,24 +151,27 @@ public class QuickServerApplication extends MultiThreadedApplicationAdapter {
 	 * Called every time a client joins a room
 	 */
 	@Override
-	public boolean roomJoin(IClient client, IScope scope) {
-		log.debug("roomJoin");
-		Set<IClient> allClients = scope.getClients();
-		if (allClients.size() >= 4) {
-			System.err.println("The conference " + scope.getContextPath()
-					+ " has reach it's max size!");
-			rejectClient();
-			return false;
-		}
+    public boolean roomJoin(IClient client, IScope scope){
+    	log.debug("roomJoin");
+    	/*
+    	Set<IClient> allClients = scope.getClients();
+    	if (allClients.size() >= 4){
+    		System.err.println("The conference " + scope.getContextPath() + 
+    				" has reach it's max size!");
+    		rejectClient();
+    		return false;
+    	}
+    	
+    	Set<String> streamSet = streamMap.get(scope.getContextPath());
+    	if (null != streamSet){
+    		callClientFunc(streamListMessage, streamSet, client);
+    	}
+    	
+    	broadcast(JoinMessage, client.getAttribute(UserID), scope);
+    	*/
+    	return true;
+    }
 
-		Set<String> streamSet = streamMap.get(scope.getContextPath());
-		if (null != streamSet) {
-			callClientFunc(streamListMessage, streamSet, client);
-		}
-
-		broadcast(JoinMessage, client.getAttribute(UserID), scope);
-		return true;
-	}
 
 	/**
 	 * Called when a client leaves a room
@@ -263,10 +266,9 @@ public class QuickServerApplication extends MultiThreadedApplicationAdapter {
 			return;
 		}
 
-		log.debug("scope " + scope.getContextPath() + " has "
-				+ clientSet.size() + " clients");
-		for (IClient client : clientSet) {
-			callClientFunc(func, message, client);
+		log.debug("scope " + scope.getContextPath() + " has " + clientSet.size() + " clients");
+		for (IClient client : clientSet){
+			//callClientFunc(func, message, client);
 		}
 	}
 
