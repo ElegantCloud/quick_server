@@ -9,7 +9,13 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="E:/Red5/lib/slf4j-api-1.5.10.jar"/>
-	<classpathentry kind="lib" path="E:/Red5/boot.jar" sourcepath="F:/svn/red5/red5-0.9.1/src.zip"/>
+	<classpathentry kind="lib" path="E:/programs/Red5/lib/slf4j-api-1.5.10.jar"/>
+	<classpathentry kind="lib" path="E:/programs/Red5/boot.jar" sourcepath="F:/svn/red5/red5-0.9.1/src.zip"/>
+	<classpathentry kind="lib" path="E:/programs/Red5/lib/spring-beans-3.0.0.jar"/>
+	<classpathentry kind="lib" path="E:/programs/Red5/lib/spring-context-3.0.0.jar"/>
+	<classpathentry kind="lib" path="E:/programs/Red5/lib/spring-context-support-3.0.0.jar"/>
+	<classpathentry kind="lib" path="E:/programs/Red5/lib/spring-core-3.0.0.jar"/>
+	<classpathentry kind="lib" path="E:/programs/Red5/lib/spring-expression-3.0.0.jar"/>
+	<classpathentry kind="lib" path="E:/programs/Red5/lib/spring-web-3.0.0.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
